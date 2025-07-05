@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="github/docs/logo.png" alt="amnesia logo" width="200"/>
+  <img src="github/docs/logo-2.png" alt="amnesia logo" width="200"/>
   <h1>amnesia</h1>
   <sup>Fuzzy search and checkout Git branches from your terminal</sup>
 </div>
