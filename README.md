@@ -21,7 +21,7 @@
 - [fzf](https://github.com/junegunn/fzf) (must be in your `$PATH`)
 - [git](https://git-scm.com/)
 
-## Installation
+## Installation(at the moment)
 
 1. **Clone the repository:**
    ```sh
