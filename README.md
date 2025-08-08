@@ -8,6 +8,8 @@
 
 **amnesia** is a shell utility for quickly searching and checking out Git branches using the power of [`fzf`](https://github.com/junegunn/fzf). It streamlines your workflow by making branch navigation fast and interactive.
 
+[Leia em português](README_PT.md)
+
 ## Features
 
 - 🔍 Fuzzy search for local branches
