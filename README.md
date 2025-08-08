@@ -44,6 +44,11 @@
    source ~/.zshrc
    ```
 
+4. **Install fzf dependency**
+   ```sh
+   sudo apt-get install fzf
+   ```
+
 ## Usage
 
 | Command                | Description                                      |
