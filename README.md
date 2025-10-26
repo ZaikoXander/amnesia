@@ -23,14 +23,19 @@
 - [fzf](https://github.com/junegunn/fzf) (must be in your `$PATH`)
 - [git](https://git-scm.com/)
 
-## Installation(at the moment)
+## Installation (at the moment)
 
-1. **Clone the repository:**
+1. **Install fzf dependency**
+   ```sh
+   sudo apt install fzf
+   ```
+
+2. **Clone the repository:**
    ```sh
    git clone https://github.com/ZaikoXander/amnesia.git
    ```
 
-2. **Source the script in your shell config:**
+3. **Source the script in your shell config:**
    ```sh
    # For bash:
    echo 'source /path/to/amnesia/index.sh' >> ~/.bashrc
@@ -38,15 +43,10 @@
    echo 'source /path/to/amnesia/index.sh' >> ~/.zshrc
    ```
 
-3. **Reload your shell:**
+4. **Reload your shell:**
    ```sh
    source ~/.bashrc   # or
    source ~/.zshrc
-   ```
-
-4. **Install fzf dependency**
-   ```sh
-   sudo apt-get install fzf
    ```
 
 ## Usage

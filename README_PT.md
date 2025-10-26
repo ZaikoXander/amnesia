@@ -25,12 +25,17 @@
 
 ## Instalação (no momento)
 
-1. **Clone o repositório:**
+1. **Instale a dependência fzf**
+   ```sh
+   sudo apt install fzf
+   ```
+
+2. **Clone o repositório:**
    ```sh
    git clone https://github.com/ZaikoXander/amnesia.git
    ```
 
-2. **Inclua o script na configuração do seu shell:**
+3. **Inclua o script na configuração do seu shell:**
    ```sh
    # Para bash:
    echo 'source /caminho/para/amnesia/index.sh' >> ~/.bashrc
@@ -38,7 +43,7 @@
    echo 'source /caminho/para/amnesia/index.sh' >> ~/.zshrc
    ```
 
-3. **Recarregue seu shell:**
+4. **Recarregue seu shell:**
    ```sh
    source ~/.bashrc   # ou
    source ~/.zshrc
