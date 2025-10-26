@@ -1,11 +1,27 @@
 function amn() {
-  # If no arguments are provided, check out the default branch
-  if [[ $# -eq 0 ]]; then
+  # Check for --pull option
+  local pull_after_checkout=false
+  local args=()
+  
+  # Parse arguments to extract --pull option
+  for arg in "$@"; do
+    if [[ "$arg" == "--pull" ]]; then
+      pull_after_checkout=true
+    else
+      args+=("$arg")
+    fi
+  done
+
+  # If no arguments are provided (excluding --pull), check out the default branch
+  if [[ ${#args[@]} -eq 0 ]]; then
     # Get the remote HEAD symbolic ref, e.g. "origin/HEAD -> origin/main"
     local default_branch=$(_git_branch_default)
 
     if [[ -n "$default_branch" ]]; then
       command git checkout "$default_branch"
+      if [[ "$pull_after_checkout" == true ]]; then
+        command git pull
+      fi
     else
       echo "amnesia: no match found"
       return 1
@@ -14,8 +30,8 @@ function amn() {
     return
   fi
 
-  # Join all arguments into a single query string
-  local query="$*"
+  # Join remaining arguments into a single query string
+  local query="${args[*]}"
 
   # Use fuzzy search behind the scenes with full query
   local match
@@ -23,6 +39,9 @@ function amn() {
 
   if [[ -n "$match" ]]; then
     command git checkout "$match"
+    if [[ "$pull_after_checkout" == true ]]; then
+      command git pull
+    fi
   else
     echo "amnesia: no match found"
     return 1
@@ -30,8 +49,21 @@ function amn() {
 }
 
 function amni() {
-  # Join all arguments into a single query string
-  local query="$*"
+  # Check for --pull option
+  local pull_after_checkout=false
+  local args=()
+  
+  # Parse arguments to extract --pull option
+  for arg in "$@"; do
+    if [[ "$arg" == "--pull" ]]; then
+      pull_after_checkout=true
+    else
+      args+=("$arg")
+    fi
+  done
+
+  # Join remaining arguments into a single query string
+  local query="${args[*]}"
 
   local branches=$(_git_branch_sorted_by_recent_commits)
 
@@ -45,6 +77,9 @@ function amni() {
 
   if [[ -n "$match" ]]; then
     command git checkout "$match"
+    if [[ "$pull_after_checkout" == true ]]; then
+      command git pull
+    fi
   else
     echo "amnesia: no match found"
     return 1
