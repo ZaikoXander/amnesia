@@ -52,22 +52,41 @@
 ## Uso
 
 | Comando                | Descrição                                       |
-|------------------------|------------------------------------------------|
+|------------------------|-------------------------------------------------|
+| `amn`                  | Faz checkout da branch padrão (`main`/`master`)      |
+| `amn --pull`           | Faz checkout da branch padrão e puxa as últimas alterações |
 | `amn <branch>`         | Busca fuzzy e faz checkout de uma branch       |
+| `amn --pull <branch>`  | Busca fuzzy, faz checkout e puxa as últimas alterações |
 | `amni`                 | Seleciona interativamente e faz checkout       |
+| `amni --pull`          | Seleciona interativamente, faz checkout e puxa as últimas alterações |
 | `amnb <branch>`        | Exibe o nome da branch correspondente (sem checkout) |
 | `amnbi`                | Seleciona interativamente e exibe o nome da branch   |
-| `amn`                  | Faz checkout da branch padrão (`main`/`master`)      |
 
 ### Exemplos
 
+- **Fazer checkout da branch padrão:**
+  ```sh
+  amn
+  ```
+- **Fazer checkout da branch padrão e puxar as últimas alterações:**
+  ```sh
+  amn --pull
+  ```
 - **Fazer checkout de uma branch pelo nome:**
   ```sh
-  amn feature/login
+  amn feat/login
+  ```
+- **Fazer checkout de uma branch e puxar as últimas alterações:**
+  ```sh
+  amn --pull feat/login
   ```
 - **Selecionar interativamente uma branch para checkout:**
   ```sh
   amni
+  ```
+- **Selecionar interativamente uma branch, fazer checkout e puxar as últimas alterações:**
+  ```sh
+  amni --pull
   ```
 - **Exibir o nome de uma branch correspondente:**
   ```sh
@@ -76,10 +95,6 @@
 - **Selecionar interativamente e exibir o nome de uma branch:**
   ```sh
   amnbi
-  ```
-- **Fazer checkout da branch padrão:**
-  ```sh
-  amn
   ```
 
 ## Contribuindo

@@ -53,21 +53,40 @@
 
 | Command                | Description                                      |
 |------------------------|--------------------------------------------------|
+| `amn`                  | Checkout the default branch (`main`/`master`)    |
+| `amn --pull`           | Checkout the default branch and pull latest changes |
 | `amn <branch>`         | Fuzzy-search and checkout a branch               |
+| `amn --pull <branch>`  | Fuzzy-search, checkout a branch, and pull latest changes |
 | `amni`                 | Interactively select and checkout a branch       |
+| `amni --pull`          | Interactively select, checkout a branch, and pull latest changes |
 | `amnb <branch>`        | Print matching branch name (no checkout)         |
 | `amnbi`                | Interactively select and print branch name       |
-| `amn`                  | Checkout the default branch (`main`/`master`)    |
 
 ### Examples
 
+- **Checkout the default branch:**
+  ```sh
+  amn
+  ```
+- **Checkout the default branch and pull latest changes:**
+  ```sh
+  amn --pull
+  ```
 - **Checkout a branch by name:**
   ```sh
-  amn feature/login
+  amn feat/login
+  ```
+- **Checkout a branch and pull latest changes:**
+  ```sh
+  amn --pull feat/login
   ```
 - **Interactively select a branch to checkout:**
   ```sh
   amni
+  ```
+- **Interactively select a branch, checkout and pull latest changes:**
+  ```sh
+  amni --pull
   ```
 - **Print a matching branch name:**
   ```sh
@@ -76,10 +95,6 @@
 - **Interactively print a branch name:**
   ```sh
   amnbi
-  ```
-- **Checkout the default branch:**
-  ```sh
-  amn
   ```
 
 ## Contributing
